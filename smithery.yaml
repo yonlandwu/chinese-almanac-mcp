@@ -1,0 +1,18 @@
+# Smithery configuration file for chinese-almanac-mcp
+# https://smithery.ai/docs/config
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    properties:
+      apiKey:
+        type: string
+        title: "12Zodiacs API Key (optional)"
+        description: "Extends the free tier from ±90 days to ±365 days. Request one at https://www.12zodiacs.com/about-us/api/"
+        default: ""
+  command: node
+  args:
+    - dist/index.js
+  env:
+    TUNGSHING_API_KEY: "{{apiKey}}"
