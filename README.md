@@ -59,6 +59,15 @@ Optional env:
 - Without a key: ±90 days around today 免费窗口 ±90 天
 - With a free key: ±365 days（[request a key 申请 Key](https://www.12zodiacs.com/about-us/api/)）
 
+### Install via Smithery (recommended 推荐)
+
+```bash
+npx -y @smithery/cli install chinese-almanac-mcp --client claude
+```
+
+**中文说明**：通过 Smithery 一键安装到 Claude Desktop / Cursor（`--client` 可选
+`claude` / `cursor`）。
+
 ### Run from source 源码运行
 
 ```bash
