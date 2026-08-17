@@ -68,6 +68,18 @@ npx -y @smithery/cli install chinese-almanac-mcp --client claude
 **中文说明**：通过 Smithery 一键安装到 Claude Desktop / Cursor（`--client` 可选
 `claude` / `cursor`）。
 
+### Codex / OpenAI (MCP config)
+
+Add to `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.chinese-almanac]
+command = "npx"
+args = ["-y", "chinese-almanac-mcp@latest"]
+```
+
+*(npm 包发布后生效；发布前用 `node /path/to/chinese-almanac-mcp/dist/index.js`)*
+
 ### Run from source 源码运行
 
 ```bash
