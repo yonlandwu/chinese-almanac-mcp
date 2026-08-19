@@ -1,6 +1,9 @@
 # Chinese Almanac MCP (中国黄历择日 MCP 服务)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/chinese-almanac-mcp.svg)](https://www.npmjs.com/package/chinese-almanac-mcp)
+[![Install with Smithery](https://smithery.ai/badge/@yonlandwu/chinese-almanac-mcp)](https://smithery.ai/servers/yonlandwu/chinese-almanac-mcp)
+[![Glama MCP](https://img.shields.io/badge/Glama-Listed-FF6B35?labelColor=1a1a2e)](https://glama.ai/mcp/servers/yonlandwu/chinese-almanac-mcp)
 
 A [Model Context Protocol](https://modelcontextprotocol.io) server for the
 Chinese Tung Shing (通勝) almanac — let Claude, Cursor, Windsurf, or any MCP
