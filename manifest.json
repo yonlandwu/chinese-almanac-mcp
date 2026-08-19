@@ -54,31 +54,101 @@
   "tools": [
     {
       "name": "get_daily_almanac",
-      "description": "Full almanac for a date 某日完整黄历（农历/干支/值神/黄黑道/冲煞/宜忌/神煞）"
+      "description": "Full almanac for a date 某日完整黄历（农历/干支/值神/黄黑道/冲煞/宜忌/神煞）",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Date YYYY-MM-DD (default today)"
+          }
+        }
+      }
     },
     {
       "name": "get_hour_pillars",
-      "description": "12 two-hour pillars 十二时辰黄黑道吉凶"
+      "description": "12 two-hour pillars 十二时辰黄黑道吉凶",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Date YYYY-MM-DD (default today)"
+          }
+        }
+      }
     },
     {
       "name": "get_solar_terms",
-      "description": "24 solar terms, minute precision 某年二十四节气（分钟级）"
+      "description": "24 solar terms, minute precision 某年二十四节气（分钟级）",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "number",
+            "description": "Year (default current)"
+          }
+        }
+      }
     },
     {
       "name": "pick_auspicious_dates",
-      "description": "Top dates for an event 择日（8 活动 + 同义词 + weekend_only）"
+      "description": "Top dates for an event 择日（8 活动 + 同义词 + weekend_only）",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "activity": {
+            "type": "string",
+            "description": "Activity: wedding/moving-house/grand-opening/renovation/c-section/signing-contracts/travel/starting-a-new-job (or synonyms)"
+          },
+          "year": {
+            "type": "number",
+            "description": "Year (default current)"
+          },
+          "month": {
+            "type": "number",
+            "description": "Month 1-12 (optional)"
+          },
+          "weekends_only": {
+            "type": "boolean",
+            "description": "Weekend dates only (default false)"
+          }
+        }
+      }
     },
     {
       "name": "get_daily_horoscope",
-      "description": "Zodiac daily luck 生肖日运（12 生肖）"
+      "description": "Zodiac daily luck 生肖日运（12 生肖）",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sign": {
+            "type": "string",
+            "description": "Zodiac sign: rat/ox/tiger/rabbit/dragon/snake/horse/goat/monkey/rooster/dog/pig"
+          }
+        }
+      }
     },
     {
       "name": "get_personal_lucky_hours",
-      "description": "Ranked hours for your zodiac 个人吉时（三合六合×黄黑道）"
+      "description": "Ranked hours for your zodiac 个人吉时（三合六合×黄黑道）",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sign": {
+            "type": "string",
+            "description": "Zodiac sign: rat/ox/.../pig"
+          }
+        }
+      }
     },
     {
       "name": "list_activities",
-      "description": "All events + synonyms 活动与同义词清单"
+      "description": "All events + synonyms 活动与同义词清单",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
     }
   ],
   "compatibility": {
