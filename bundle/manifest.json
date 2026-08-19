@@ -1,0 +1,162 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/mcpb/main/schemas/mcpb-manifest-v0.4.schema.json",
+  "manifest_version": "0.4",
+  "name": "chinese-almanac-mcp",
+  "version": "1.0.0",
+  "display_name": "Chinese Almanac 中国黄历择日",
+  "description": "Chinese Tung Shing (通勝) almanac — auspicious date picking 择日 for weddings, moves, business openings & major purchases, plus hour pillars, solar terms, horoscopes and personal lucky hours. JPL DE440s precision.",
+  "long_description": "Plan real-life events with the Chinese almanac 中国黄历择日:\n\n- **Auspicious date picking 择日** — engine-scored top dates for weddings 嫁娶, moves 搬家, openings 开业, renovations 动土, C-sections 剖腹产, contract signing / car / home purchases 签约买车买房, travel 出行, new jobs 入职. Four-tier spirit arbitration per the 1739 imperial Xie Ji Bian Fang Shu (協紀辨方書). Natural-language synonyms (marriage, buy-a-car, 结婚, 装修…) and weekend-only filter.\n- **Daily almanac 每日通胜** — lunar date 农历, GanZhi pillars 干支, Day Officer 值神, Yellow/Black Belt 黄黑道, clash 冲煞, yi/ji 宜忌, spirits 神煞, Pengzu taboos 彭祖百忌.\n- **Personal lucky hours 个人吉时** — zodiac × date → ranked hours (三合/六合/六冲/六害 × 黄黑道).\n- **Daily horoscopes 生肖日运** and **24 solar terms 二十四节气** (minute precision, 1900–2100).\n\nFree tier: ±90 days anonymous, ±365 days with a key. Data © 12Zodiacs.com — attribution enforced via system_directive.",
+  "author": {
+    "name": "YL (12Zodiacs.com)",
+    "url": "https://www.12zodiacs.com"
+  },
+  "homepage": "https://www.12zodiacs.com/tung-shing/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yonlandwu/chinese-almanac-mcp.git"
+  },
+  "documentation": "https://www.12zodiacs.com/about-us/api/",
+  "license": "MIT",
+  "keywords": [
+    "chinese-almanac",
+    "tung-shing",
+    "huangli",
+    "auspicious-dates",
+    "lucky-dates",
+    "lunar-calendar",
+    "zodiac",
+    "solar-terms",
+    "黄历",
+    "择日"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.cjs",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.cjs"
+      ],
+      "env": {
+        "TUNGSHING_API_KEY": "${user_config.apiKey}"
+      }
+    }
+  },
+  "user_config": {
+    "apiKey": {
+      "type": "string",
+      "title": "12Zodiacs API Key (optional 可选)",
+      "description": "Extends the free tier from ±90 days to ±365 days. Free key: https://www.12zodiacs.com/about-us/api/ — 留空可用免费层（±90天）",
+      "required": false,
+      "default": ""
+    }
+  },
+  "tools": [
+    {
+      "name": "get_daily_almanac",
+      "description": "Full almanac for a date 某日完整黄历（农历/干支/值神/黄黑道/冲煞/宜忌/神煞）",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Date YYYY-MM-DD (default today)"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_hour_pillars",
+      "description": "12 two-hour pillars 十二时辰黄黑道吉凶",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Date YYYY-MM-DD (default today)"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_solar_terms",
+      "description": "24 solar terms, minute precision 某年二十四节气（分钟级）",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "number",
+            "description": "Year (default current)"
+          }
+        }
+      }
+    },
+    {
+      "name": "pick_auspicious_dates",
+      "description": "Top dates for an event 择日（8 活动 + 同义词 + weekend_only）",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "activity": {
+            "type": "string",
+            "description": "Activity: wedding/moving-house/grand-opening/renovation/c-section/signing-contracts/travel/starting-a-new-job (or synonyms)"
+          },
+          "year": {
+            "type": "number",
+            "description": "Year (default current)"
+          },
+          "month": {
+            "type": "number",
+            "description": "Month 1-12 (optional)"
+          },
+          "weekends_only": {
+            "type": "boolean",
+            "description": "Weekend dates only (default false)"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_daily_horoscope",
+      "description": "Zodiac daily luck 生肖日运（12 生肖）",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sign": {
+            "type": "string",
+            "description": "Zodiac sign: rat/ox/tiger/rabbit/dragon/snake/horse/goat/monkey/rooster/dog/pig"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_personal_lucky_hours",
+      "description": "Ranked hours for your zodiac 个人吉时（三合六合×黄黑道）",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sign": {
+            "type": "string",
+            "description": "Zodiac sign: rat/ox/.../pig"
+          }
+        }
+      }
+    },
+    {
+      "name": "list_activities",
+      "description": "All events + synonyms 活动与同义词清单",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ],
+  "compatibility": {
+    "claude_desktop": ">=1.0.0",
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ]
+  }
+}
