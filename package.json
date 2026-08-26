@@ -1,7 +1,7 @@
 {
   "name": "chinese-almanac-mcp",
   "mcpName": "io.github.yonlandwu/chinese-almanac-mcp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "MCP server for the Chinese almanac (黄历/通胜) — auspicious date picking 择日, daily almanac, hour pillars, solar terms, horoscopes & personal lucky hours. Powered by the 12Zodiacs engine (JPL DE440s precision). 中国黄历择日 MCP 服务.",
   "type": "module",
   "bin": {
