@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="中华通胜 黄历 MCP">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9e1b1b"/>
+      <stop offset="1" stop-color="#6f1212"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="184" height="184" rx="36" fill="url(#bg)"/>
+  <rect x="8" y="8" width="184" height="184" rx="36" fill="none" stroke="#d4af37" stroke-width="4"/>
+  <!-- 日历环 -->
+  <rect x="40" y="44" width="120" height="14" rx="6" fill="#d4af37"/>
+  <circle cx="58" cy="51" r="7" fill="#9e1b1b"/>
+  <circle cx="142" cy="51" r="7" fill="#9e1b1b"/>
+  <!-- 日历主体 -->
+  <rect x="40" y="66" width="120" height="92" rx="10" fill="#fbf3e7"/>
+  <!-- 网格 -->
+  <g stroke="#c9b79c" stroke-width="3">
+    <line x1="40" y1="98" x2="160" y2="98"/>
+    <line x1="40" y1="130" x2="160" y2="130"/>
+    <line x1="80" y1="66" x2="80" y2="158"/>
+    <line x1="120" y1="66" x2="120" y2="158"/>
+  </g>
+  <!-- 印章红点 -->
+  <circle cx="100" cy="114" r="13" fill="#9e1b1b"/>
+</svg>
