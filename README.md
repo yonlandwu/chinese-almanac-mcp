@@ -28,6 +28,24 @@ canon.
 - 🎯 **Personal lucky hours 个人吉时** — your zodiac × date → ranked hours
   （三合/六合/六冲/六害 × 黄黑道）
 - 🐉 **Daily horoscope 生肖日运** — 12 signs, 0-100 score + 8 categories
+
+## v1.1 — Transparent auspicious picking 择日增强
+
+`pick_auspicious_dates` now supports `patron_birth` (福主生日):
+
+- **Patron zodiac match** — days clashing (六冲) or harming (六害) the
+  patron's zodiac are vetoed; 三合/六合 days get +15 with bilingual reasons.
+- **Fixed inauspicious days hard-veto** — 杨公忌 / 三娘煞 (weddings) /
+  十恶大败 / 四离四绝 (computed from **minute-precision solar terms**).
+- **Transparent split** — `engine_score` (0-5 four-tier arbitration) and
+  `local_adjustment` are reported separately, never double-counted.
+- **`pick_dates_deep`** — day-by-day scan for burial 安葬 & ancestor worship
+  祭祀 (no engine shortlist exists for these), capped at 31-day windows.
+- All scoring logic is ported from and cross-validated against the
+  [tung-shing-almanac-skill](https://github.com/yonlandwu/tung-shing-almanac-skill)
+  Python engine — 249 test vectors, 100% match.
+
+
 - 🌾 **24 solar terms 二十四节气** — minute precision (JPL DE440s ephemeris,
   1900–2100)
 - 🛡️ **Watermarked, rate-limited API** — data provenance & DMCA-ready

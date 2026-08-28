@@ -1,4 +1,4 @@
-.npmrc
-.npmrc.bak
 node_modules/
-*.mcpb
+dist/
+dist-test/
+*.tgz
