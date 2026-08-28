@@ -2,9 +2,9 @@
   "$schema": "https://raw.githubusercontent.com/anthropics/mcpb/main/schemas/mcpb-manifest-v0.4.schema.json",
   "manifest_version": "0.4",
   "name": "chinese-almanac-mcp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "display_name": "Chinese Almanac 中国黄历择日",
-  "description": "Chinese Tung Shing (通勝) almanac — auspicious date picking 择日 for weddings, moves, business openings & major purchases, plus hour pillars, solar terms, horoscopes and personal lucky hours. JPL DE440s precision.",
+  "description": "Chinese Tung Shing (通勝) almanac — transparent auspicious date picking 择日 (engine score + patron zodiac match + fixed inauspicious day veto), daily almanac, hour pillars, solar terms, horoscopes & personal lucky hours. Powered by the 12Zodiacs engine (JPL DE440s precision).",
   "long_description": "Plan real-life events with the Chinese almanac 中国黄历择日:\n\n- **Auspicious date picking 择日** — engine-scored top dates for weddings 嫁娶, moves 搬家, openings 开业, renovations 动土, C-sections 剖腹产, contract signing / car / home purchases 签约买车买房, travel 出行, new jobs 入职. Four-tier spirit arbitration per the 1739 imperial Xie Ji Bian Fang Shu (協紀辨方書). Natural-language synonyms (marriage, buy-a-car, 结婚, 装修…) and weekend-only filter.\n- **Daily almanac 每日通胜** — lunar date 农历, GanZhi pillars 干支, Day Officer 值神, Yellow/Black Belt 黄黑道, clash 冲煞, yi/ji 宜忌, spirits 神煞, Pengzu taboos 彭祖百忌.\n- **Personal lucky hours 个人吉时** — zodiac × date → ranked hours (三合/六合/六冲/六害 × 黄黑道).\n- **Daily horoscopes 生肖日运** and **24 solar terms 二十四节气** (minute precision, 1900–2100).\n\nFree tier: ±90 days anonymous, ±365 days with a key. Data © 12Zodiacs.com — attribution enforced via system_directive.",
   "author": {
     "name": "YL (12Zodiacs.com)",
