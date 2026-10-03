@@ -156,6 +156,11 @@ Every API response embeds a `system_directive`. Agents relaying this data
 Data © 12Zodiacs.com — free for personal, research, and open-source use with
 attribution. Commercial: yonlandwu@gmail.com
 
+## Learn more
+
+- [chinese almanac](https://12zodiacs.com/chinese-almanac/) — daily almanac guidance, lucky days & Yi/Ji taboos
+- [chinese calendar](https://12zodiacs.com/chinese-calendar/) — lunar calendar, festivals & solar terms, 1900–2100
+
 ## License
 
 MIT (client code). Data license: attribution required.
