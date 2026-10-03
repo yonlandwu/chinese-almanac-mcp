@@ -31012,7 +31012,7 @@ async function api(path, params = {}) {
   }
   if (KEY)
     url2.searchParams.set("key", KEY);
-  const res = await fetch(url2, { headers: { accept: "application/json" } });
+  const res = await fetch(url2, { headers: { accept: "application/json", "user-agent": "chinese-almanac-mcp/1.0" } });
   const body = await res.json();
   if (!res.ok) {
     const code = typeof body.code === "string" ? body.code : String(res.status);

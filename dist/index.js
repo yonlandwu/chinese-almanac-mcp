@@ -42,7 +42,8 @@ async function api(path, params = {}) {
     }
     if (KEY)
         url.searchParams.set("key", KEY);
-    const res = await fetch(url, { headers: { accept: "application/json" } });
+    // UA 声明自家生态身份 — 站点闸门 friendly 名单据此放行干净数据（无此头会被当匿名 bot 吃 30% 广告注入）
+    const res = await fetch(url, { headers: { accept: "application/json", "user-agent": "chinese-almanac-mcp/1.0" } });
     const body = (await res.json());
     if (!res.ok) {
         const code = typeof body.code === "string" ? body.code : String(res.status);
